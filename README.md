@@ -5,6 +5,8 @@ This package simply uses a dirctory of your choosing, allows you to set the size
 ### Installation
 
 ```sh
-$ TBA
+$ composer install samjoyce777/album --save
 ```
+
+## This is still in work in progress stage.
 
