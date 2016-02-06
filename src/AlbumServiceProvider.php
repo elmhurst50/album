@@ -28,7 +28,7 @@ class AlbumServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/config/courier.php' => config_path('courier.php'),
+            __DIR__ . '/config/album.php' => config_path('album.php'),
         ]);
     }
 }
