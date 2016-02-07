@@ -115,8 +115,7 @@ class Album
      * @param $size
      * @throws \Exception
      */
-    protected
-    function checkCallForErrors($size)
+    protected function checkCallForErrors($size)
     {
         if (!array_key_exists($size, $this->sizes)) throw new \Exception($size . ' is not a valid size');
     }
@@ -128,8 +127,7 @@ class Album
      * @param $size
      * @return string
      */
-    protected
-    function makeSizeFilename($imageFile, $size)
+    protected function makeSizeFilename($imageFile, $size)
     {
         $pathParts = pathinfo($imageFile);
 
@@ -148,7 +146,7 @@ class Album
     protected
     function setImageSizes()
     {
-        return config('sizes');
+        return config('album.sizes');
     }
 
     /**
@@ -158,7 +156,7 @@ class Album
     protected
     function setPublicUrl()
     {
-        $publicUrl = url() . config('paths.cache');
+        $publicUrl = url() . config('album.paths.cache');
 
         return $publicUrl;
     }
@@ -170,7 +168,7 @@ class Album
     protected
     function setCachePath()
     {
-        $cachePath = public_path() . config('paths.cache');
+        $cachePath = public_path() . config('album.paths.cache');
 
         if (!file_exists($cachePath)) mkdir($cachePath, 0777, true);
 
@@ -181,10 +179,9 @@ class Album
      * Sets the original path to store original images and create dir if not done
      * @return string
      */
-    protected
-    function setOriginalsPath()
+    protected function setOriginalsPath()
     {
-        $originalsPath = base_path() . config('paths.original');
+        $originalsPath = base_path() . config('album.paths.original');
 
         if (!file_exists($originalsPath)) mkdir($originalsPath, 0777, true);
 
